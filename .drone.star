@@ -51,13 +51,13 @@ codecov_step = {
 flake_step = {
     "name": "flake8",
     "image": "weblate/cidocker:3.7",
-    "commands": ["pip install -r requirements-lint.txt", "flake8"],
+    "commands": ["pip install -r requirements-ci.txt", "flake8"],
 }
 sdist_step = {
     "name": "sdist",
     "image": "weblate/cidocker:3.7",
     "commands": [
-        "pip install -r requirements-lint.txt",
+        "pip install -r requirements-ci.txt",
         "./setup.py sdist",
         "twine check dist/*",
     ],

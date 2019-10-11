@@ -12,4 +12,3 @@ flake8-print
 flake8-return; python_version >= '3.6'
 flake8-self
 pep8-naming
-
