@@ -19,8 +19,8 @@
 #
 
 from django.test.utils import modify_settings
-from weblate.trans.models import Change, Project
 from weblate.auth.models import User
+from weblate.trans.models import Change, Project
 from weblate.trans.tests.test_views import FixtureTestCase
 
 from .tasks import get_change_body, get_change_topic
