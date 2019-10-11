@@ -8,6 +8,9 @@
 
 from setuptools import setup
 
+with open(os.path.join(os.path.dirname(__file__), "README.rst")) as readme:
+    LONG_DESCRIPTION = readme.read()
+
 setup(
     name="weblate_fedora_messaging",
     version="0.1",
@@ -15,7 +18,7 @@ setup(
     include_package_data=True,
     license="MIT",
     description="Weblate Fedora Messaging integration",
-    long_description="Weblate Fedora Messaging integration",
+    long_description=LONG_DESCRIPTION,
     keywords="i18n l10n gettext git mercurial translate",
     url="https://weblate.org/",
     author="Michal Čihař",
