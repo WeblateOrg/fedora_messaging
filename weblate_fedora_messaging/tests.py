@@ -18,15 +18,18 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-from django.db.models.signals import post_save
-from django.dispatch import receiver
+
 from weblate.trans.models import Change
-from weblate.utils.decorators import disable_for_loaddata
+from weblate.trans.tests.test_views import FixtureTestCase
 
-from .tasks import fedora_messaging_change
+from .tasks import get_change_body, get_change_topic
 
 
-@receiver(post_save, sender=Change)
-@disable_for_loaddata
-def fedora_notify_change(sender, instance, **kwargs):
-    fedora_messaging_change.delay(instance.pk)
+class FedoraTestCase(FixtureTestCase):
+    def test_topic(self):
+        for change in Change.objects.all():
+            self.assertIsNotNone(get_change_topic(change))
+
+    def test_body(self):
+        for change in Change.objects.all():
+            self.assertIsNotNone(get_change_body(change))
