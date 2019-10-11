@@ -23,3 +23,14 @@ addons:
   apt:
     packages:
     - rabbitmq-server
+    - git-svn
+    - graphviz
+    - libcairo-dev
+    - libacl1-dev
+    - gir1.2-pango-1.0
+    - libgirepository1.0-dev
+    - libenchant1c2a
+    - g++
+    - daemon
+    sources:
+    - git-core
