@@ -1,2 +1,3 @@
 Weblate
-fedora-messaging
+django-appconf==1.0.3
+fedora-messaging==1.7.2

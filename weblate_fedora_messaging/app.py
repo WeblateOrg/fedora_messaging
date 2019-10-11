@@ -17,25 +17,22 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
+from __future__ import unicode_literals
 
-from appconf import AppConf
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-from weblate.trans.models import Change
-from weblate.utils.decorators import disable_for_loaddata
-
-from .tasks import fedora_messaging_change
+import fedora_messaging
+from django.apps import AppConfig
+from django.conf import settings
 
 
-@receiver(post_save, sender=Change)
-@disable_for_loaddata
-def fedora_notify_change(sender, instance, **kwargs):
-    fedora_messaging_change.delay(instance.pk)
+class FedoraConfig(AppConfig):
+    name = "weblate_fedora_messaging"
+    label = "weblate_fedora_messaging"
+    verbose_name = "Weblate Fedora Messaging"
 
-
-class FedoraConf(AppConf):
-
-    FEDORA_MESSAGING_CONF = None
-
-    class Meta:
-        prefix = ""
+    def ready(self):
+        super().ready()
+        if settings.FEDORA_MESSAGING_CONF:
+            fedora_messaging.config.conf.load_config(
+                config_path=settings.FEDORA_MESSAGING_CONF
+            )
+        fedora_messaging.config.conf.setup_logging()
