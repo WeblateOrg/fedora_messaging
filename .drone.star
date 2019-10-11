@@ -14,7 +14,7 @@ basic_install = []
 # PostgreSQL library installation
 cmd_pip_postgresql = "pip install psycopg2-binary"
 # PIP requirements installation
-cmd_pip_deps = "pip install -r requirements-optional.txt -r requirements-test.txt"
+cmd_pip_deps = "pip install -r requirements-test.txt"
 
 
 def secret(name):
