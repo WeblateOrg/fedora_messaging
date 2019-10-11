@@ -7,10 +7,9 @@ default_env = {
     "DJANGO_SETTINGS_MODULE": "weblate.settings_test",
     "CI_DATABASE": "postgresql",
     "CI_DB_HOST": "database",
+    "CI_AMQP_HOST": "rabbitmq",
 }
 
-# Basic set of installation files, usually used to update base docker image
-basic_install = []
 # PostgreSQL library installation
 cmd_pip_postgresql = "pip install psycopg2-binary"
 # PIP requirements installation
@@ -66,7 +65,11 @@ test_step = {
     "name": "test",
     "image": "weblate/cidocker:3.7",
     "environment": get_test_env(),
-    "commands": basic_install + [cmd_pip_postgresql, cmd_pip_deps, "coverage run `which django-admin` test"],
+    "commands": [
+        cmd_pip_postgresql,
+        cmd_pip_deps,
+        "coverage run `which django-admin` test",
+    ],
 }
 
 # Services
@@ -76,6 +79,7 @@ database_service = {
     "ports": [5432],
     "environment": {"POSTGRES_USER": "postgres", "POSTGRES_DB": "weblate"},
 }
+rabbitmq_service = {"name": "rabbitmq", "image": "rabbitmq:3.8-alpine", "ports": [5672]}
 
 # Pipeline template
 pipeline_template = {
@@ -97,5 +101,5 @@ def pipeline(name, steps, services=None):
 def main(ctx):
     return [
         pipeline("lint", [flake_step, sdist_step]),
-        pipeline("tests:python-3.7", [test_step, codecov_step], [database_service]),
+        pipeline("tests:python-3.7", [test_step, codecov_step], [database_service, rabbitmq_service]),
     ]

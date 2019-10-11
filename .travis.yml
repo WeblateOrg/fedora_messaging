@@ -17,3 +17,9 @@ after_script:
   - coverage xml
   - codecov
 cache: pip
+services:
+  - rabbitmq
+addons:
+  apt:
+    packages:
+    - rabbitmq-server

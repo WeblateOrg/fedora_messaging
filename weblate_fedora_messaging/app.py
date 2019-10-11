@@ -18,6 +18,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 from __future__ import unicode_literals
+import os
 
 import fedora_messaging
 from django.apps import AppConfig
@@ -34,5 +35,11 @@ class FedoraConfig(AppConfig):
         if settings.FEDORA_MESSAGING_CONF:
             fedora_messaging.config.conf.load_config(
                 config_path=settings.FEDORA_MESSAGING_CONF
+            )
+        if "CI_AMQP_HOST" in os.environ:
+            fedora_messaging.config.conf.update(
+                amqp_url="amqp://{}?connection_attempts=3&retry_delay=5".format(
+                    os.environ["CI_AMQP_HOST"]
+                )
             )
         fedora_messaging.config.conf.setup_logging()
