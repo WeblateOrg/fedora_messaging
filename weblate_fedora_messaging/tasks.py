@@ -23,6 +23,7 @@ from fedora_messaging.api import Message, publish
 from fedora_messaging.exceptions import ConnectionException, PublishReturned
 from weblate.celery import app
 from weblate.trans.models import Change
+from weblate.utils.site import get_site_url
 
 
 def get_change_topic(change):
@@ -47,6 +48,7 @@ def get_change_body(change):
         "timestamp": change.timestamp.isoformat(),
         "target": change.target,
         "old": change.old,
+        "url": get_site_url(change.get_absolute_url()),
     }
     if change.author:
         result["author"] = change.author.username
