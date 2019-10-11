@@ -37,7 +37,7 @@ class FedoraTestCase(FixtureTestCase):
 
     @modify_settings(INSTALLED_APPS={"append": "weblate_fedora_messaging"})
     def test_create(self):
-        user = User.objects.all()[0]
+        user = User.objects.get(username="testuser")
         project = Project.objects.all()[0]
         Change.objects.create(
             action=Change.ACTION_REMOVE_PROJECT, target="test", user=user
@@ -47,5 +47,5 @@ class FedoraTestCase(FixtureTestCase):
             project=project,
             target="test",
             user=user,
-            author=user,
+            author=User.objects.get(username="jane"),
         )
