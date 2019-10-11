@@ -9,7 +9,7 @@ install:
   - pip install --upgrade pip wheel
   - pip install -U -r requirements-test.txt -r requirements-ci.txt
 script: 
-  - coverage django-admin test --settings weblate.settings_test
+  - coverage run `which django-admin` test --settings weblate.settings_test
   - python ./setup.py sdist
   - python -m twine check dist/*
   - flake8

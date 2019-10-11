@@ -66,7 +66,7 @@ test_step = {
     "name": "test",
     "image": "weblate/cidocker:3.7",
     "environment": get_test_env(),
-    "commands": basic_install + [cmd_pip_postgresql, cmd_pip_deps, "./ci/run-test"],
+    "commands": basic_install + [cmd_pip_postgresql, cmd_pip_deps, "coverage run `which django-admin` test"],
 }
 
 # Services
