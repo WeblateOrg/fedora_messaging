@@ -20,6 +20,6 @@ Installation:
 
 Weblate integration:
 
-.. code-block:: pyton
+.. code-block:: python
 
     INSTALLED_APPS.append('weblate_fedora_messaging')
