@@ -19,6 +19,7 @@
 #
 
 
+from django.test.utils import modify_settings
 from weblate.trans.models import Change
 from weblate.trans.tests.test_views import FixtureTestCase
 
@@ -33,3 +34,7 @@ class FedoraTestCase(FixtureTestCase):
     def test_body(self):
         for change in Change.objects.all():
             self.assertIsNotNone(get_change_body(change))
+
+    @modify_settings(INSTALLED_APPS={"append": "weblate_fedora_messaging"})
+    def test_create(self):
+        Change.objects.create(action=Change.ACTION_REMOVE_PROJECT, target="test")

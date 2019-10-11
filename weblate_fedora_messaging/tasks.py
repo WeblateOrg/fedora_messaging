@@ -44,7 +44,7 @@ def get_change_body(change):
     result = {
         "id": change.id,
         "action": change.get_action_display(),
-        "timestamp": change.timestamp,
+        "timestamp": change.timestamp.isoformat(),
         "target": change.target,
         "old": change.old,
     }
