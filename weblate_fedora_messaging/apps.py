@@ -26,6 +26,20 @@ from django.apps import AppConfig
 from django.conf import settings
 
 
+def configure_fedora_messaging():
+    if settings.FEDORA_MESSAGING_CONF:
+        fedora_messaging.config.conf.load_config(
+            config_path=settings.FEDORA_MESSAGING_CONF
+        )
+    if "CI_AMQP_HOST" in os.environ:
+        fedora_messaging.config.conf.update(
+            amqp_url="amqp://{}?connection_attempts=3&retry_delay=5".format(
+                os.environ["CI_AMQP_HOST"]
+            )
+        )
+    fedora_messaging.config.conf.setup_logging()
+
+
 class FedoraConfig(AppConfig):
     name = "weblate_fedora_messaging"
     label = "weblate_fedora_messaging"
@@ -33,14 +47,4 @@ class FedoraConfig(AppConfig):
 
     def ready(self):
         super().ready()
-        if settings.FEDORA_MESSAGING_CONF:
-            fedora_messaging.config.conf.load_config(
-                config_path=settings.FEDORA_MESSAGING_CONF
-            )
-        if "CI_AMQP_HOST" in os.environ:
-            fedora_messaging.config.conf.update(
-                amqp_url="amqp://{}?connection_attempts=3&retry_delay=5".format(
-                    os.environ["CI_AMQP_HOST"]
-                )
-            )
-        fedora_messaging.config.conf.setup_logging()
+        configure_fedora_messaging()

@@ -18,7 +18,6 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-
 from django.test.utils import modify_settings
 from weblate.trans.models import Change
 from weblate.trans.tests.test_views import FixtureTestCase
