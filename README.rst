@@ -59,7 +59,7 @@ The body consists of following fields (given that they are available for the eve
    Author username (this can be different from user for example when accepting suggestions)
 ``user``
    Acting username
-``project```
+``project``
    Project slug
 ``component``
    Component slug
