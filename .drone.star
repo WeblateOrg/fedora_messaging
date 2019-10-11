@@ -12,7 +12,7 @@ default_env = {
 # Basic set of installation files, usually used to update base docker image
 basic_install = []
 # PostgreSQL library installation
-cmd_pip_postgresql = "pip install -r requirements-postgresql.txt"
+cmd_pip_postgresql = "pip install psycopg2-binary"
 # PIP requirements installation
 cmd_pip_deps = "pip install -r requirements-optional.txt -r requirements-test.txt"
 
