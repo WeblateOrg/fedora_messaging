@@ -60,6 +60,8 @@ def get_change_body(change):
         result["component"] = change.component.slug
     if change.translation:
         result["translation"] = change.translation.language.code
+    if change.unit:
+        result["source"] = change.unit.source
     result.update(change.details)
     return result
 

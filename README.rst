@@ -53,6 +53,8 @@ The body consists of following fields (given that they are available for the eve
    New value of the change (eg. new translation of the string)
 ``old``
    Old value of the change (eg. previous translation of the string)
+``source```
+   Source string.
 ``url``
    Absolute URL to view the related object.
 ``author``
