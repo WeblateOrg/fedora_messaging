@@ -34,6 +34,9 @@ jobs:
             libssl-dev \
             libffi-dev \
             libenchant1c2a \
+            libgirepository1.0-dev \
+            libcairo-dev \
+            gir1.2-pango-1.0 \
             cython \
             tesseract-ocr
     - name: Set up Python ${{ matrix.python-version }}
