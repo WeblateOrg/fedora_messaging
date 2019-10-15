@@ -13,6 +13,30 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Install dependencies
+      run: |
+        apt-get update
+        apt-get install -y \
+            gir1.2-pango-1.0 \
+            mercurial \
+            git \
+            git-svn \
+            gnupg \
+            subversion \
+            pkg-config \
+            python3-dev \
+            libxml2-dev \
+            libacl1-dev \
+            libxmlsec1-dev \
+            libleptonica-dev \
+            libtesseract-dev \
+            libsasl2-dev \
+            libldap2-dev \
+            libssl-dev \
+            libffi-dev \
+            libenchant1c2a \
+            cython \
+            tesseract-ocr
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
