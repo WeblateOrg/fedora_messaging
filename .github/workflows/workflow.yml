@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
 
-    runs-on: weblate/cidocker
+    runs-on: ubuntu-latest
     strategy:
       max-parallel: 2
       matrix:
