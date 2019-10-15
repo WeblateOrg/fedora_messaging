@@ -63,8 +63,8 @@ jobs:
     - name: Test with Django
       env:
         CI_DATABASE: "postgresql"
-        CI_DB_HOST: "database"
-        CI_AMQP_HOST: "rabbitmq"
+        CI_DB_HOST: "localhost"
+        CI_AMQP_HOST: "localhost"
         DJANGO_SETTINGS_MODULE: "weblate.settings_test"
 
       run: |
