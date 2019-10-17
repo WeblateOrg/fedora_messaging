@@ -49,3 +49,4 @@ class FedoraTestCase(FixtureTestCase):
             user=user,
             author=User.objects.get(username="jane"),
         )
+        self.edit_unit('Hello, world!\n', 'Ahoj svete!\n')
