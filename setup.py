@@ -21,6 +21,7 @@ setup(
     license="MIT",
     description="Weblate Fedora Messaging integration",
     long_description=LONG_DESCRIPTION,
+    long_description_content_typ="text/x-rst",
     keywords="i18n l10n gettext git mercurial translate",
     url="https://weblate.org/",
     author="Michal Čihař",
