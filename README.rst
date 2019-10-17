@@ -69,4 +69,4 @@ The body consists of following fields (given that they are available for the eve
    Translation language code
 
 
-.. Change actions_: https://github.com/WeblateOrg/weblate/blob/master/weblate/trans/models/change.py#L218
+.. _Change actions source code: https://github.com/WeblateOrg/weblate/blob/master/weblate/trans/models/change.py#L218
