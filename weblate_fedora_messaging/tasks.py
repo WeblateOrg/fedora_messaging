@@ -46,10 +46,14 @@ def get_change_body(change):
         "id": change.id,
         "action": change.get_action_display(),
         "timestamp": change.timestamp.isoformat(),
-        "target": change.target,
-        "old": change.old,
-        "url": get_site_url(change.get_absolute_url()),
     }
+    url = change.get_absolute_url()
+    if url:
+        result["url"] = get_site_url()
+    if change.target:
+        result["target"] = change.target
+    if change.old:
+        result["old"] = change.old
     if change.author:
         result["author"] = change.author.username
     if change.user:
