@@ -70,3 +70,112 @@ The body consists of following fields (given that they are available for the eve
 
 
 .. _Change actions source code: https://github.com/WeblateOrg/weblate/blob/master/weblate/trans/models/change.py#L218
+
+
+Example messages
+----------------
+
+Repository merge event:
+
+.. code-block:: json
+
+    {
+      "id": 1,
+      "action": "Merged repository",
+      "timestamp": "2017-06-15T11:30:47.325000+00:00",
+      "url": "http://example.com/projects/test/test/",
+      "component": "test"
+    }
+
+New source string event:
+
+.. code-block:: json
+
+    {
+      "id": 2,
+      "action": "New source string",
+      "timestamp": "2017-06-15T11:30:47.372000+00:00",
+      "url": "http://example.com/translate/test/test/cs/?checksum=6412684aaf018e8e",
+      "component": "test",
+      "translation": "cs",
+      "source": "Hello, world!\n"
+    }
+
+Resource update event:
+
+.. code-block:: json
+
+    {
+      "id": 6,
+      "action": "Resource update",
+      "timestamp": "2017-06-15T11:30:47.410000+00:00",
+      "url": "http://example.com/projects/test/test/cs/",
+      "project": "test",
+      "component": "test",
+      "translation": "cs"
+    }
+    {
+      "id": 7,
+      "action": "Resource update",
+      "timestamp": "2017-06-15T11:30:47.510000+00:00",
+      "url": "http://example.com/projects/test/test/de/",
+      "project": "test",
+      "component": "test",
+      "translation": "de"
+    }
+    {
+      "id": 8,
+      "action": "Resource update",
+      "timestamp": "2017-06-15T11:30:47.595000+00:00",
+      "url": "http://example.com/projects/test/test/it/",
+      "project": "test",
+      "component": "test",
+      "translation": "it"
+    }
+
+Project removal event:
+
+.. code-block:: json
+
+    {
+      "id": 9,
+      "action": "Removed project",
+      "timestamp": "2019-10-17T15:57:08.559420+00:00",
+      "target": "test",
+      "user": "testuser"
+    }
+
+New contributor event:
+
+.. code-block:: json
+
+    {
+      "id": 11,
+      "action": "New contributor",
+      "timestamp": "2019-10-17T15:57:08.759960+00:00",
+      "url": "http://example.com/translate/test/test/cs/?checksum=6412684aaf018e8e",
+      "author": "testuser",
+      "user": "testuser",
+      "project": "test",
+      "component": "test",
+      "translation": "cs",
+      "source": "Hello, world!\n"
+    }
+
+New translation event:
+
+.. code-block:: json
+
+    {
+      "id": 12,
+      "action": "New translation",
+      "timestamp": "2019-10-17T15:57:08.772591+00:00",
+      "url": "http://example.com/translate/test/test/cs/?checksum=6412684aaf018e8e",
+      "target": "Ahoj svete!\n",
+      "author": "testuser",
+      "user": "testuser",
+      "project": "test",
+      "component": "test",
+      "translation": "cs",
+      "source": "Hello, world!\n"
+    }
