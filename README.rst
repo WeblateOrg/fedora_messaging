@@ -46,7 +46,7 @@ The body consists of following fields (given that they are available for the eve
 ``id``
    Numerical ID of change
 ``action``
-   Verbose name of the change
+   Verbose name of the change, see `Change actions source code`_ for possible values
 ``timestamp``
    ISO formatted timestamp
 ``target``
@@ -67,3 +67,6 @@ The body consists of following fields (given that they are available for the eve
    Component slug
 ``translation``
    Translation language code
+
+
+.. Change actions_: https://github.com/WeblateOrg/weblate/blob/master/weblate/trans/models/change.py#L218
