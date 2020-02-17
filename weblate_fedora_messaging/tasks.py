@@ -21,8 +21,8 @@
 from django.core.exceptions import ObjectDoesNotExist
 from fedora_messaging.api import Message, publish
 from fedora_messaging.exceptions import ConnectionException, PublishReturned
-from weblate.celery import app
 from weblate.trans.models import Change
+from weblate.utils.celery import app
 from weblate.utils.site import get_site_url
 
 
