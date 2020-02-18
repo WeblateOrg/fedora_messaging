@@ -34,4 +34,4 @@ addons:
     - g++
     - daemon
     sources:
-    - git-core
+    - sourceline: ppa:git-core/ppa
