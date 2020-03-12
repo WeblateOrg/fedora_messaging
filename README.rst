@@ -25,7 +25,7 @@ Fedora messaging integration for Weblate.
     :target: https://pypi.org/project/weblate-fedora-messaging/
     :alt: PyPI package
 
-.. image:: https://img.shields.io/readthedocs/weblate.svg
+.. image:: https://readthedocs.org/projects/weblate/badge/
     :alt: Documentation
     :target: https://docs.weblate.org/
 
