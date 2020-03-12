@@ -28,6 +28,7 @@ setup(
     author_email="michal@cihar.com",
     install_requires=["Weblate"],
     zip_safe=False,
+    python_requires=">=3.5",
     classifiers=[
         "Environment :: Web Environment",
         "Framework :: Django",
@@ -37,10 +38,7 @@ setup(
         "Operating System :: OS Independent",
         "Development Status :: 5 - Production/Stable",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 2",
-        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.4",
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
