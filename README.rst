@@ -21,8 +21,8 @@ Fedora messaging integration for Weblate.
     :alt: CII Best Practices
     :target: https://bestpractices.coreinfrastructure.org/projects/552
 
-.. image:: https://img.shields.io/pypi/v/fedora_messaging.svg
-    :target: https://pypi.org/project/fedora_messaging/
+.. image:: https://img.shields.io/pypi/v/weblate-fedora-messaging.svg
+    :target: https://pypi.org/project/weblate-fedora-messaging/
     :alt: PyPI package
 
 .. image:: https://img.shields.io/readthedocs/weblate.svg
