@@ -15,7 +15,7 @@ with open("requirements.txt") as handle:
     REQUIRES = handle.read().split()
 
 with open("requirements-test.txt") as handle:
-    REQUIRES_TEST = handle.read().split()[2:]
+    REQUIRES_TEST = handle.read().split()
 
 setup(
     name="weblate_fedora_messaging",

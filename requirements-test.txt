@@ -1,4 +1,3 @@
--r requirements.txt
 codecov
 pre-commit
 twine
