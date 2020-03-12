@@ -1,34 +1,44 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright © 2012 - 2019 Michal Čihař <michal@cihar.com>
+# Copyright © 2012 - 2020 Michal Čihař <michal@cihar.com>
 #
 # This file is part of Weblate <https://weblate.org/>
 #
 
-import os
-
 from setuptools import setup
 
-with open(os.path.join(os.path.dirname(__file__), "README.rst")) as readme:
-    LONG_DESCRIPTION = readme.read()
+with open("README.rst") as handle:
+    LONG_DESCRIPTION = handle.read()
+
+with open("requirements.txt") as handle:
+    REQUIRES = handle.read().split()
+
+with open("requirements-test.txt") as handle:
+    REQUIRES_TEST = handle.read().split()[2:]
 
 setup(
     name="weblate_fedora_messaging",
     version="0.1",
-    packages=["weblate_fedora_messaging"],
-    include_package_data=True,
-    license="MIT",
-    description="Weblate Fedora Messaging integration",
-    long_description=LONG_DESCRIPTION,
-    long_description_content_typ="text/x-rst",
-    keywords="i18n l10n gettext git mercurial translate",
-    url="https://weblate.org/",
     author="Michal Čihař",
     author_email="michal@cihar.com",
-    install_requires=["Weblate"],
-    zip_safe=False,
-    python_requires=">=3.5",
+    description="Weblate Fedora Messaging integration",
+    long_description=LONG_DESCRIPTION,
+    long_description_content_type="text/x-rst",
+    license="GPLv3+",
+    keywords="i18n l10n gettext git mercurial translate",
+    url="https://weblate.org/",
+    download_url="https://github.com/WeblateOrg/fedora_mesaging",
+    project_urls={
+        "Issue Tracker": "https://github.com/WeblateOrg/fedora_messaging/issues",
+        "Documentation": "https://docs.weblate.org/",
+        "Source Code": "https://github.com/WeblateOrg/fedora_messaging",
+        "Twitter": "https://twitter.com/WeblateOrg",
+    },
+    platforms=["any"],
+    packages=["weblate_fedora_messaging"],
+    include_package_data=True,
+    install_requires=REQUIRES,
     classifiers=[
         "Environment :: Web Environment",
         "Framework :: Django",
@@ -47,4 +57,7 @@ setup(
         "Topic :: Internet :: WWW/HTTP",
         "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
     ],
+    python_requires=">=3.5",
+    setup_requires=["pytest-runner"],
+    tests_require=REQUIRES_TEST,
 )
