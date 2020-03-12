@@ -13,6 +13,22 @@ Fedora messaging integration for Weblate.
     :alt: Website
     :target: https://weblate.org/
 
+.. image:: https://hosted.weblate.org/widgets/weblate/-/svg-badge.svg
+    :alt: Translation status
+    :target: https://hosted.weblate.org/engage/weblate/?utm_source=widget
+
+.. image:: https://bestpractices.coreinfrastructure.org/projects/552/badge
+    :alt: CII Best Practices
+    :target: https://bestpractices.coreinfrastructure.org/projects/552
+
+.. image:: https://img.shields.io/pypi/v/fedora_messaging.svg
+    :target: https://pypi.org/project/fedora_messaging/
+    :alt: PyPI package
+
+.. image:: https://img.shields.io/readthedocs/weblate.svg
+    :alt: Documentation
+    :target: https://docs.weblate.org/
+
 Installation
 ------------
 
