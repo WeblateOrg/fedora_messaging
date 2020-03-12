@@ -1,16 +1,17 @@
-Weblate Fedora Messaging integration
-====================================
+.. image:: https://s.weblate.org/cdn/Logo-Darktext-borders.png
+   :alt: Weblate
+   :target: https://weblate.org/
+   :height: 80px
 
-.. image:: https://cloud.drone.io/api/badges/WeblateOrg/fedora_messaging/status.svg
-   :target: https://cloud.drone.io/WeblateOrg/fedora_messaging
+**Weblate is a copylefted libre software web-based continuous localization system,
+used by over 1150 libre projects and companies in more than 115 countries.**
 
-.. image:: https://travis-ci.com/WeblateOrg/fedora_messaging.svg?branch=master
-   :target: https://travis-ci.com/WeblateOrg/fedora_messaging
-
-.. image:: https://codecov.io/gh/WeblateOrg/fedora_messaging/branch/master/graph/badge.svg
-  :target: https://codecov.io/gh/WeblateOrg/fedora_messaging
 
 Fedora messaging integration for Weblate.
+
+.. image:: https://img.shields.io/badge/website-weblate.org-blue.svg
+    :alt: Website
+    :target: https://weblate.org/
 
 Installation
 ------------
@@ -20,6 +21,8 @@ Install from PyPI:
 .. code-block:: sh
 
     pip install weblate-fedora-messaging
+
+Sources are available at <https://github.com/WeblateOrg/fedora_messaging>.
 
 Configure Weblate integration:
 
