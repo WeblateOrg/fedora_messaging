@@ -48,7 +48,7 @@ def get_change_body(change):
     }
     url = change.get_absolute_url()
     if url:
-        result["url"] = get_site_url()
+        result["url"] = get_site_url(url)
     if change.target:
         result["target"] = change.target
     if change.old:
