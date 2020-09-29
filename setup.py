@@ -18,7 +18,7 @@ with open("requirements-test.txt") as handle:
 
 setup(
     name="weblate_fedora_messaging",
-    version="0.2",
+    version="0.3",
     author="Michal Čihař",
     author_email="michal@cihar.com",
     description="Weblate Fedora Messaging integration",
