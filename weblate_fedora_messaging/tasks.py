@@ -21,6 +21,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from fedora_messaging.api import Message, publish
 from fedora_messaging.exceptions import ConnectionException, PublishReturned
 from weblate.trans.models import Change
+from weblate.trans.util import split_plural
 from weblate.utils.celery import app
 from weblate.utils.site import get_site_url
 
@@ -50,9 +51,9 @@ def get_change_body(change):
     if url:
         result["url"] = get_site_url(url)
     if change.target:
-        result["target"] = change.target
+        result["target"] = split_plural(change.target)
     if change.old:
-        result["old"] = change.old
+        result["old"] = split_plural(change.old)
     if change.author:
         result["author"] = change.author.username
     if change.user:
@@ -64,7 +65,7 @@ def get_change_body(change):
     if change.translation:
         result["translation"] = change.translation.language.code
     if change.unit:
-        result["source"] = change.unit.source
+        result["source"] = split_plural(change.unit.source)
     result.update(change.details)
     return result
 
