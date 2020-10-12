@@ -48,4 +48,14 @@ class FedoraTestCase(FixtureTestCase):
             user=user,
             author=User.objects.get(username="jane"),
         )
+
+    @modify_settings(INSTALLED_APPS={"append": "weblate_fedora_messaging"})
+    def test_edit(self):
         self.edit_unit("Hello, world!\n", "Ahoj svete!\n")
+
+    @modify_settings(INSTALLED_APPS={"append": "weblate_fedora_messaging"})
+    def test_plural(self):
+        self.edit_unit(
+            "Orangutan has %d banana.\n\u001e\u001eOrangutan has %d bananas.\n",
+            "Opice má %d banán.\n",
+        )

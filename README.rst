@@ -117,7 +117,7 @@ New source string event:
       "url": "http://example.com/translate/test/test/cs/?checksum=6412684aaf018e8e",
       "component": "test",
       "translation": "cs",
-      "source": "Hello, world!\n"
+      "source": ["Hello, world!\n"]
     }
 
 Resource update event:
@@ -178,7 +178,7 @@ New contributor event:
       "project": "test",
       "component": "test",
       "translation": "cs",
-      "source": "Hello, world!\n"
+      "source": ["Hello, world!\n"]
     }
 
 New translation event:
@@ -190,11 +190,11 @@ New translation event:
       "action": "New translation",
       "timestamp": "2019-10-17T15:57:08.772591+00:00",
       "url": "http://example.com/translate/test/test/cs/?checksum=6412684aaf018e8e",
-      "target": "Ahoj svete!\n",
+      "target": ["Ahoj svete!\n"],
       "author": "testuser",
       "user": "testuser",
       "project": "test",
       "component": "test",
       "translation": "cs",
-      "source": "Hello, world!\n"
+      "source": ["Hello, world!\n"]
     }
