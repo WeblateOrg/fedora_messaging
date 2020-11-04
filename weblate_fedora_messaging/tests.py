@@ -35,7 +35,8 @@ class FedoraTestCase(FixtureTestCase):
             self.assertIsNotNone(get_change_body(change))
 
     @modify_settings(INSTALLED_APPS={"append": "weblate_fedora_messaging"})
-    def test_create(self):
+    @staticmethod
+    def test_create():
         user = User.objects.get(username="testuser")
         project = Project.objects.all()[0]
         Change.objects.create(
