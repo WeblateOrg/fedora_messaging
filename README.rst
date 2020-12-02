@@ -45,11 +45,11 @@ Configure Weblate integration:
 .. code-block:: python
 
    # Add to installed apps
-   INSTALLED_APPS.append('weblate_fedora_messaging')
+   INSTALLED_APPS.append("weblate_fedora_messaging")
    # Path to configuration file
-   FEDORA_MESSAGING_CONF = '/etc/fedora-messaging/config.toml'
+   FEDORA_MESSAGING_CONF = "/etc/fedora-messaging/config.toml"
    # Route messaging to notify queue
-   CELERY_TASK_ROUTES['weblate_fedora_messaging.tasks.*'] = {'queue': 'notify'}
+   CELERY_TASK_ROUTES["weblate_fedora_messaging.tasks.*"] = {"queue": "notify"}
 
 
 Messages
