@@ -70,6 +70,17 @@ def get_change_body(change):
     return result
 
 
+def get_change_headers(change):
+    result = {
+        "action": change.get_action_display(),
+    }
+    if change.project:
+        result["project"] = change.project.slug
+    if change.component:
+        result["component"] = change.component.slug
+    return result
+
+
 # Retry for not existing object (maybe transaction not yet committed) with
 # delay of 10 minutes growing exponentially
 @app.task(
@@ -80,4 +91,10 @@ def get_change_body(change):
 )
 def fedora_messaging_change(change_id):
     change = Change.objects.get(pk=change_id)
-    publish(Message(topic=get_change_topic(change), body=get_change_body(change)))
+    publish(
+        Message(
+            topic=get_change_topic(change),
+            headers=get_change_headers(change),
+            body=get_change_body(change),
+        )
+    )
