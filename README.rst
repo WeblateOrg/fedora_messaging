@@ -52,14 +52,20 @@ Configure Weblate integration:
    CELERY_TASK_ROUTES["weblate_fedora_messaging.tasks.*"] = {"queue": "notify"}
 
 
-Messages
---------
+Messages content
+----------------
+
+Topic
++++++
 
 All messages have topic
 ``weblate.<action>.<project>.<component>.<translation>``. The action is
 lowercase textual representation of action with underscores instead of space,
 for example ``resource_update``, all other parts are optional and represent
 slug of the object or a language code.
+
+Body
+++++
 
 The body consists of following fields (given that they are available for the event):
 
@@ -88,6 +94,8 @@ The body consists of following fields (given that they are available for the eve
 ``translation``
    Translation language code
 
+Headers
++++++++
 
 There are additional headers which you might utilize for routing as well:
 
