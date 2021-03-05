@@ -89,6 +89,16 @@ The body consists of following fields (given that they are available for the eve
    Translation language code
 
 
+There are additional headers which you might utilize for routing as well:
+
+``action``
+   Verbose name of the change, see `Change actions source code`_ for possible values
+``project``
+   Project slug
+``component``
+   Component slug
+
+
 .. _Change actions source code: https://github.com/WeblateOrg/weblate/blob/master/weblate/trans/models/change.py#L218
 
 
