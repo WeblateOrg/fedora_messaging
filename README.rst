@@ -55,10 +55,11 @@ Configure Weblate integration:
 Messages
 --------
 
-All messages have topic ``weblate.SCOPE.ACTION``. The scope is ``global``,
-``project``, ``component``, ``translation`` or ``unit``, action is lowercase
-textual representation of action with underscores instead of space, for example
-``resource_update``.
+All messages have topic
+``weblate.<action>.<project>.<component>.<translation>``. The action is
+lowercase textual representation of action with underscores instead of space,
+for example ``resource_update``, all other parts are optional and represent
+slug of the object or a language code.
 
 The body consists of following fields (given that they are available for the event):
 

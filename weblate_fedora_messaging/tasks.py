@@ -27,18 +27,19 @@ from weblate.utils.site import get_site_url
 
 
 def get_change_topic(change):
-    scope = "global"
-    if change.unit:
-        scope = "unit"
-    elif change.translation:
-        scope = "translation"
-    elif change.component:
-        scope = "component"
-    elif change.project:
-        scope = "project"
-    return "weblate.{}.{}".format(
-        scope, change.get_action_display().lower().replace(" ", "_")
-    )
+    """
+    Generates a topic for the change.
+
+    Is is in the form weblate.<action>.<project>.<component>.<translation>
+    """
+    parts = ["weblate", change.get_action_display().lower().replace(" ", "_")]
+    if change.project:
+        parts.append(change.project.slug)
+    if change.component:
+        parts.append(change.component.slug)
+    if change.translation:
+        parts.append(change.translation.language.code)
+    return ".".join(parts)
 
 
 def get_change_body(change):
