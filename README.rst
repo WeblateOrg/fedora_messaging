@@ -7,7 +7,7 @@
 used by over 1150 libre projects and companies in more than 115 countries.**
 
 
-Fedora messaging integration for Weblate.
+Fedora messaging integration and AMQP publisher for Weblate.
 
 .. image:: https://img.shields.io/badge/website-weblate.org-blue.svg
     :alt: Website
