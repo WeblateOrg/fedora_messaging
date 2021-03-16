@@ -67,7 +67,7 @@ def get_change_body(change):
         result["translation"] = change.translation.language.code
     if change.unit:
         result["source"] = split_plural(change.unit.source)
-        result["context"] = split_plural(change.unit.context)
+        result["context"] = change.unit.context
     result.update(change.details)
     return result
 
