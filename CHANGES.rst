@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.4
+---
+
+* Included context in unit events.
+
 0.3
 ---
 
