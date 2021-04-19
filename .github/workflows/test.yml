@@ -42,7 +42,6 @@ jobs:
               gir1.2-pango-1.0 \
               gettext \
               git \
-              git-svn \
               gnupg \
               subversion \
               pkg-config \
