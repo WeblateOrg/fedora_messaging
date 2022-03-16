@@ -217,3 +217,8 @@ New translation event:
       "translation": "cs",
       "source": ["Hello, world!\n"]
     }
+
+Contributing
+------------
+
+Contributions are welcome! See `documentation <https://docs.weblate.org/en/latest/contributing/modules.html>`__ for more information.
