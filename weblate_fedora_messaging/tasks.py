@@ -17,6 +17,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from fedora_messaging.api import Message, publish
 from fedora_messaging.exceptions import ConnectionException, PublishReturned
@@ -88,8 +89,12 @@ def get_change_headers(change):
 @app.task(
     trail=False,
     autoretry_for=(ObjectDoesNotExist, PublishReturned, ConnectionException),
-    retry_backoff=600,
-    retry_backoff_max=3600,
+    retry_backoff=getattr(settings, "FEDORA_MESSAGING_TASK_RETRY_BACKOFF", 600),
+    retry_backoff_max=getattr(
+        settings, "FEDORA_MESSAGING_TASK_RETRY_BACKOFF_MAX", 3600
+    ),
+    retry_jitter=getattr(settings, "FEDORA_MESSAGING_TASK_RETRY_JITTER", True),
+    max_retries=getattr(settings, "FEDORA_MESSAGING_TASK_MAX_RETRIES", 3),
 )
 def fedora_messaging_change(change_id):
     change = Change.objects.get(pk=change_id)
