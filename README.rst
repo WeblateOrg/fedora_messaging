@@ -48,6 +48,11 @@ Configure Weblate integration:
    INSTALLED_APPS.append("weblate_fedora_messaging")
    # Path to configuration file
    FEDORA_MESSAGING_CONF = "/etc/fedora-messaging/config.toml"
+   # fedora_messaging_task retry settings (optional, the following are the default values)
+   FEDORA_MESSAGING_TASK_RETRY_BACKOFF = 600
+   FEDORA_MESSAGING_TASK_RETRY_BACKOFF_MAX = 3600
+   FEDORA_MESSAGING_TASK_RETRY_JITTER = True
+   FEDORA_MESSAGING_TASK_MAX_RETRIES = 3
    # Route messaging to notify queue
    CELERY_TASK_ROUTES["weblate_fedora_messaging.tasks.*"] = {"queue": "notify"}
 
