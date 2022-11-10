@@ -4,6 +4,9 @@ Changelog
 0.5
 ---
 
+* Added support for configuring task retries policy.
+* Dropped support for Python 3.6.
+
 0.4
 ---
 
