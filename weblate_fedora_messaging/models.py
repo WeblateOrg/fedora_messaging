@@ -33,7 +33,6 @@ def fedora_notify_change(sender, instance, **kwargs):
 
 
 class FedoraConf(AppConf):
-
     FEDORA_MESSAGING_CONF = None
 
     class Meta:
