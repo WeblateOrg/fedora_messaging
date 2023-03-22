@@ -19,12 +19,13 @@
 
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
-from fedora_messaging.api import Message, publish
-from fedora_messaging.exceptions import ConnectionException, PublishReturned
 from weblate.trans.models import Change
 from weblate.trans.util import split_plural
 from weblate.utils.celery import app
 from weblate.utils.site import get_site_url
+
+from fedora_messaging.api import Message, publish
+from fedora_messaging.exceptions import ConnectionException, PublishReturned
 
 
 def get_change_topic(change):
