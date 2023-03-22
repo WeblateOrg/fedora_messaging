@@ -57,7 +57,7 @@ setup(
         "Topic :: Internet :: WWW/HTTP",
         "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
     ],
-    python_requires=">=3.7",
+    python_requires=">=3.9",
     setup_requires=["pytest-runner"],
     tests_require=REQUIRES_TEST,
 )
