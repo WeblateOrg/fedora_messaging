@@ -19,10 +19,9 @@
 
 import os
 
+import fedora_messaging
 from django.apps import AppConfig
 from django.conf import settings
-
-import fedora_messaging
 
 
 def configure_fedora_messaging():

@@ -2,4 +2,5 @@
 target-version = ['py37']
 
 [tool.isort]
+known_third_party = ["fedora_messaging"]
 profile = "black"
