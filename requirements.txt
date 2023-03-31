@@ -1,5 +1,5 @@
 Django>=4.1,<4.2
 django-appconf>=1.0.0,<1.1
-fedora-messaging==3.2.0
+fedora-messaging==3.3.0
 setuptools>=65.5.1
 Weblate>=4.14
