@@ -29,7 +29,7 @@ from weblate.utils.site import get_site_url
 
 def get_change_topic(change):
     """
-    Generates a topic for the change.
+    Generate a topic for the change.
 
     Is is in the form weblate.<action>.<project>.<component>.<translation>
     """
