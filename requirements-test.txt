@@ -1,2 +1,2 @@
-coverage==7.2.6
+coverage==7.2.7
 twine==4.0.2
