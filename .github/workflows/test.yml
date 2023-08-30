@@ -51,8 +51,6 @@ jobs:
             libxml2-dev \
             libacl1-dev \
             libxmlsec1-dev \
-            libleptonica-dev \
-            libtesseract-dev \
             libsasl2-dev \
             libldap2-dev \
             libssl-dev \
