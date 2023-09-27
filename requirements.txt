@@ -3,3 +3,4 @@ django-appconf>=1.0.0,<1.1
 fedora-messaging==3.4.1
 setuptools>=65.5.1
 Weblate>=4.14
+pillow>=10.0.1 # not directly required, pinned by Snyk to avoid a vulnerability
