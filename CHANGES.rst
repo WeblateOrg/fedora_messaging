@@ -4,6 +4,8 @@ Changelog
 0.6
 ---
 
+* Compatibility with recent Python, Django and Weblate.
+
 0.5
 ---
 
