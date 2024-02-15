@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.7
+---
+
+* Compatibility with recent Python, Django and Weblate.
+
 0.6
 ---
 
