@@ -1,7 +1,7 @@
 cryptography>=42.0.2
 Django>=4.2,<5.1
 django-appconf>=1.0.0,<1.1
-fedora-messaging==3.4.1
+fedora-messaging==3.5.0
 setuptools>=65.5.1
 twisted>=23.8.0
 Weblate>=5.0
