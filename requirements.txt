@@ -3,6 +3,6 @@ Django>=4.2,<5.1
 django-appconf>=1.0.0,<1.1
 fedora-messaging==3.5.0
 setuptools>=65.5.1
+sqlparse>=0.5.0 # not directly required, pinned by Snyk to avoid a vulnerability
 twisted>=23.8.0
 Weblate>=5.0
-sqlparse>=0.5.0 # not directly required, pinned by Snyk to avoid a vulnerability
