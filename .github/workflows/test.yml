@@ -56,6 +56,9 @@ jobs:
             libldap2-dev \
             libssl-dev \
             libffi-dev \
+            liblz4-dev \
+            libzstd-dev \
+            libxxhash-dev \
             libgirepository1.0-dev \
             libcairo-dev \
             gir1.2-pango-1.0
