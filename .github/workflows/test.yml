@@ -68,6 +68,7 @@ jobs:
       with:
         enable-cache: true
         cache-dependency-glob: ''
+        cache-suffix: ${{ matrix.python-version }}
     - name: Install pip dependencies
       run: uv pip install --system -r requirements.txt -r requirements-test.txt psycopg2-binary
     - name: Test
