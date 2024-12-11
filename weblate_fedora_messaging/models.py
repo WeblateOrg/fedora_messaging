@@ -32,6 +32,19 @@ def fedora_notify_change(sender, instance, **kwargs):
     fedora_messaging_change.delay(instance.pk)
 
 
+try:
+    from weblate.trans.signals import change_bulk_create
+except ImportError:
+    pass
+else:
+
+    @receiver(change_bulk_create)
+    @disable_for_loaddata
+    def fedora_notify_change(sender, instances, **kwargs):
+        for instance in instances:
+            fedora_messaging_change.delay(instance.pk)
+
+
 class FedoraConf(AppConf):
     FEDORA_MESSAGING_CONF = None
 
