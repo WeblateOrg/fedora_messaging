@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.9
+---
+
+* Compatibility with Weblate 5.9.
+
 0.8
 ---
 
