@@ -1,3 +1,0 @@
-build==1.2.2.post1
-coverage==7.6.10
-twine==6.0.1
