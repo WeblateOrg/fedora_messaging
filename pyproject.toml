@@ -1,11 +1,8 @@
-[tool.black]
-target-version = ['py311']
-
 [tool.isort]
 known_third_party = ["fedora_messaging"]
 profile = "black"
 
-[tool.ruff]
+[tool.ruff.lint]
 ignore = [
   "D10",  # TODO: we are missing many docstrings
   "D203",  # CONFIG: incompatible with D211
@@ -45,7 +42,6 @@ select = [
   "SLF",
   "N"
 ]
-target-version = "py311"
 
-[tool.ruff.mccabe]
+[tool.ruff.lint.mccabe]
 max-complexity = 16
