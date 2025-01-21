@@ -23,6 +23,8 @@ import fedora_messaging
 from django.apps import AppConfig
 from django.conf import settings
 
+from weblate.utils.version import VERSION
+
 
 def configure_fedora_messaging():
     if settings.FEDORA_MESSAGING_CONF:
@@ -36,6 +38,14 @@ def configure_fedora_messaging():
             )
         )
     fedora_messaging.config.conf.setup_logging()
+    messaging_version = fedora_messaging.config.conf["client_properties"]["version"]
+    version = f"Weblate-{VERSION} {messaging_version}"
+    fedora_messaging.config.conf["client_properties"] = {
+        "app": "Weblate",
+        "product": "Weblate Fedora Messaging",
+        "information": "https://github.com/WeblateOrg/fedora_messaging",
+        "version": version,
+    }
 
 
 class FedoraConfig(AppConfig):
