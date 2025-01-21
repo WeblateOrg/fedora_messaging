@@ -22,6 +22,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from weblate.trans.models import Change
 from weblate.utils.decorators import disable_for_loaddata
+from weblate.trans.signals import change_bulk_create
 
 from .tasks import fedora_messaging_change
 
@@ -32,17 +33,11 @@ def fedora_notify_change(sender, instance, **kwargs):
     fedora_messaging_change.delay(instance.pk)
 
 
-try:
-    from weblate.trans.signals import change_bulk_create
-except ImportError:
-    pass
-else:
-
-    @receiver(change_bulk_create)
-    @disable_for_loaddata
-    def fedora_notify_change(sender, instances, **kwargs):
-        for instance in instances:
-            fedora_messaging_change.delay(instance.pk)
+@receiver(change_bulk_create)
+@disable_for_loaddata
+def fedora_bulk_notify_change(sender, instances, **kwargs):
+    for instance in instances:
+        fedora_messaging_change.delay(instance.pk)
 
 
 class FedoraConf(AppConf):
