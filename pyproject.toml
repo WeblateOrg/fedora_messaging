@@ -1,6 +1,86 @@
-[tool.isort]
-known_third_party = ["fedora_messaging"]
-profile = "black"
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+  "setuptools>=61.2"
+]
+
+[project]
+authors = [
+  {email = "michal@cihar.com", name = "Michal Čihař"}
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Web Environment",
+  "Framework :: Django",
+  "Intended Audience :: Developers",
+  "Intended Audience :: System Administrators",
+  "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python",
+  "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Software Development :: Internationalization",
+  "Topic :: Software Development :: Localization"
+]
+dependencies = [
+  "cryptography>=42.0.2",
+  "django-appconf>=1.0.0,<1.1",
+  "Django>=5.0,<5.2",
+  "fedora-messaging==3.7.0",
+  "setuptools>=65.5.1",
+  "twisted>=23.8.0",
+  "Weblate>=5.9"
+]
+description = "Weblate Fedora Messaging integration"
+keywords = [
+  "gettext",
+  "git",
+  "i18n",
+  "l10n",
+  "mercurial",
+  "translate"
+]
+name = "weblate_fedora_messaging"
+requires-python = ">=3.11"
+version = "0.9"
+
+[project.license]
+text = "GPL-3.0-or-later"
+
+[project.optional-dependencies]
+lint = [
+  "pre-commit==4.0.1"
+]
+test = [
+  "build==1.2.2.post1",
+  "coverage==7.6.10",
+  "twine==6.0.1"
+]
+
+[project.readme]
+content-type = "text/x-rst"
+file = "README.rst"
+
+[project.urls]
+Documentation = "https://docs.weblate.org/"
+Download = "https://github.com/WeblateOrg/fedora_mesaging"
+Funding = "https://weblate.org/donate/"
+Homepage = "https://weblate.org/"
+"Issue Tracker" = "https://github.com/WeblateOrg/fedora_messaging/issues"
+"Source Code" = "https://github.com/WeblateOrg/fedora_messaging"
+Twitter = "https://twitter.com/WeblateOrg"
+
+[tool.check-manifest]
+ignore = [
+  "*.toml",
+  "*.yaml",
+  "*.yml"
+]
 
 [tool.ruff.lint]
 ignore = [
@@ -9,39 +89,55 @@ ignore = [
   "D212"  # CONFIG: incompatible with D213
 ]
 select = [
-  "E",
-  "F",
-  "B",
-  "T10",
   "A",
+  "B",
   "C4",
   "C90",
-  "YTT",
-  "DJ",
-  "UP",
   "D",
+  "DJ",
+  "E",
+  "ERA",
+  "EXE",
+  "F",
+  "G",
+  "ICN",
+  "INP",
+  "ISC",
+  "N",
   "PD",
   "PGH",
-  "PL",
-  "TRY",
-  "RUF",
-  "ERA",
-  "ICN",
-  "ISC",
-  "EXE",
-  "INP",
   "PIE",
-  "G",
+  "PL",
   "PYI",
   "Q",
-  "SIM",
-  "TID",
-  "RSE",
-  "T20",
   "RET",
+  "RSE",
+  "RUF",
+  "SIM",
   "SLF",
-  "N"
+  "T10",
+  "T20",
+  "TID",
+  "TRY",
+  "UP",
+  "YTT"
 ]
 
 [tool.ruff.lint.mccabe]
 max-complexity = 16
+
+[tool.setuptools]
+include-package-data = true
+packages = [
+  "weblate_fedora_messaging"
+]
+platforms = [
+  "any"
+]
+
+[tool.tomlsort]
+ignore_case = true
+sort_inline_arrays = true
+sort_inline_tables = true
+sort_table_keys = true
+spaces_before_inline_comment = 2

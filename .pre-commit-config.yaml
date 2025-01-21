@@ -8,7 +8,6 @@ repos:
   - id: end-of-file-fixer
   - id: check-yaml
   - id: check-toml
-  - id: requirements-txt-fixer
   - id: check-merge-conflict
   - id: check-json
   - id: debug-statements
@@ -46,6 +45,10 @@ repos:
     args: [--autofix, --indent, '2']
   - id: pretty-format-toml
     args: [--autofix]
+- repo: https://github.com/pappasam/toml-sort
+  rev: v0.24.2
+  hooks:
+  - id: toml-sort-fix
 - repo: https://github.com/executablebooks/mdformat
   rev: 0.7.21
   hooks:
@@ -55,5 +58,15 @@ repos:
     - mdformat-ruff==0.1.3
     - mdformat-shfmt==0.2.0
     - mdformat_tables==1.0.0
+- repo: https://github.com/abravalheri/validate-pyproject
+  rev: v0.23
+  hooks:
+  - id: validate-pyproject
+- repo: https://github.com/codespell-project/codespell
+  rev: v2.3.0
+  hooks:
+  - id: codespell
+    additional_dependencies:
+    - tomli
 ci:
   autoupdate_schedule: quarterly
