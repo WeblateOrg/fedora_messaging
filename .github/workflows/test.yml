@@ -71,7 +71,7 @@ jobs:
         cache-dependency-glob: ''
         cache-suffix: ${{ matrix.python-version }}
     - name: Install pip dependencies
-      run: uv pip install --system -e .[test] psycopg2-binary
+      run: uv pip install --system -e ".[test]" psycopg2-binary
     - name: Test
       env:
         CI_DATABASE: postgresql
@@ -79,11 +79,9 @@ jobs:
         CI_DB_HOST: localhost
         CI_AMQP_HOST: localhost
         DJANGO_SETTINGS_MODULE: weblate.settings_test
-      run: |
-        coverage run `which django-admin` test
+      run: coverage run "$(which django-admin)" test
     - name: Coverage
-      run: |
-        coverage xml
+      run: coverage xml
     - uses: codecov/codecov-action@v5
       with:
         token: ${{secrets.CODECOV_TOKEN}}
