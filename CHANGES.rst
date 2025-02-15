@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.10
+----
+
+* Dependencies bump.
+
 0.9
 ---
 
