@@ -58,7 +58,7 @@ lint = [
 ]
 test = [
   "build==1.2.2.post1",
-  "coverage==7.6.12",
+  "coverage==7.7.0",
   "twine==6.1.0"
 ]
 
