@@ -54,7 +54,7 @@ text = "GPL-3.0-or-later"
 
 [project.optional-dependencies]
 lint = [
-  "pre-commit==4.1.0"
+  "pre-commit==4.2.0"
 ]
 test = [
   "build==1.2.2.post1",
