@@ -31,7 +31,6 @@ dependencies = [
   "django-appconf>=1.0.0,<1.2",
   "Django>=5.0,<5.2",
   "fedora-messaging==3.7.0",
-  "setuptools>=78.0.2",
   "twisted>=23.8.0",
   "Weblate>=5.9"
 ]
@@ -126,7 +125,6 @@ max-complexity = 16
 
 [tool.setuptools]
 include-package-data = true
-# Empty as a workaround for https://github.com/pypa/setuptools/issues/4759
 packages = [
   "weblate_fedora_messaging"
 ]
