@@ -45,12 +45,10 @@ keywords = [
   "mercurial",
   "translate"
 ]
+license = {text = "GPL-3.0-or-later"}
 name = "weblate_fedora_messaging"
 requires-python = ">=3.11"
 version = "0.10"
-
-[project.license]
-text = "GPL-3.0-or-later"
 
 [project.optional-dependencies]
 lint = [
