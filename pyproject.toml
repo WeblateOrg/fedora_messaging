@@ -79,6 +79,9 @@ ignore = [
   "*.yml"
 ]
 
+[tool.ruff.format]
+docstring-code-format = true
+
 [tool.ruff.lint]
 ignore = [
   "D10",  # TODO: we are missing many docstrings
