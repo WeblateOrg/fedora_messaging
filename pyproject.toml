@@ -76,7 +76,8 @@ Twitter = "https://twitter.com/WeblateOrg"
 ignore = [
   "*.toml",
   "*.yaml",
-  "*.yml"
+  "*.yml",
+  ".editorconfig"
 ]
 
 [tool.ruff.format]
