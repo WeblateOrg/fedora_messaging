@@ -21,6 +21,7 @@ from django.test.utils import modify_settings
 from weblate.auth.models import User
 from weblate.trans.models import Change
 from weblate.trans.tests.test_views import FixtureTestCase
+from weblate.trans.actions import ActionEvents
 
 from .tasks import get_change_body, get_change_topic
 
@@ -37,10 +38,10 @@ class FedoraTestCase(FixtureTestCase):
     @modify_settings(INSTALLED_APPS={"append": "weblate_fedora_messaging"})
     def test_create(self):
         Change.objects.create(
-            action=Change.ACTION_REMOVE_PROJECT, target="test", user=self.user
+            action=ActionEvents.REMOVE_PROJECT, target="test", user=self.user
         )
         Change.objects.create(
-            action=Change.ACTION_REMOVE_COMPONENT,
+            action=ActionEvents.REMOVE_COMPONENT,
             project=self.project,
             target="test",
             user=self.user,
