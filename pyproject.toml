@@ -30,7 +30,7 @@ dependencies = [
   "cryptography>=42.0.2",
   "django-appconf>=1.0.0,<1.2",
   "Django>=5.0,<5.3",
-  "fedora-messaging==3.7.0",
+  "fedora-messaging==3.7.1",
   "twisted>=23.8.0",
   "Weblate>=5.11"
 ]
