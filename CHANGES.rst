@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.12
+----
+
+* Integrated `WeblateV1Message` and used a messaging schema from `weblate_schemas`
+* Renamed the field id to change_id in the body payload.
+
 0.11
 ----
 
