@@ -46,7 +46,7 @@ def get_change_topic(change):
 
 def get_change_body(change):
     result = {
-        "id": change.id,
+        "change_id": change.id,
         "action": change.get_action_display(),
         "timestamp": change.timestamp.isoformat(),
     }
