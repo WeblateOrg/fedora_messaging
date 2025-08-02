@@ -54,9 +54,7 @@ lint = [
   "pre-commit==4.2.0"
 ]
 test = [
-  "build==1.2.2.post1",
-  "coverage==7.10.1",
-  "twine==6.1.0"
+  "coverage==7.10.1"
 ]
 
 [project.readme]
