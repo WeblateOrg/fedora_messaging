@@ -31,7 +31,7 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
       rabbitmq:
-        image: rabbitmq:4.1.4@sha256:9b47a98bda92193d6786228f0068ce93349c3aec0389d7f03691f1d86ed19628
+        image: rabbitmq:4.1.4@sha256:b26516002296c03a80d02b5b6587bb35036b1cd8e65eb18b40845d680acdc0ff
         ports:
         - 5672:5672
     steps:
