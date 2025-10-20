@@ -72,6 +72,8 @@ jobs:
         enable-cache: true
         cache-dependency-glob: ''
         cache-suffix: ${{ matrix.python-version }}
+        # renovate: datasource=pypi depName=uv versioning=pep440
+        version: 0.9.4
     - name: Install pip dependencies
       run: uv pip install --system -e ".[test]" psycopg2-binary
     - name: Test
