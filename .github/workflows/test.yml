@@ -72,7 +72,7 @@ jobs:
         enable-cache: true
         cache-dependency-glob: ''
         cache-suffix: ${{ matrix.python-version }}
-        version: 0.9.8
+        version: 0.9.9
     - name: Install pip dependencies
       run: uv pip install --system -e ".[test]" psycopg2-binary
     - name: Test
