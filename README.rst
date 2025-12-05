@@ -33,9 +33,7 @@ Fedora messaging integration and AMQP publisher for Weblate.
 Deprecated
 ----------
 
-.. warning::
-
-   This integration is deprecated and was merged directly into Weblate as an add-on since the 5.15 release.
+**This integration is deprecated and was merged directly into Weblate as an add-on since the 5.15 release.**
 
 Installation
 ------------
