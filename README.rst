@@ -6,9 +6,6 @@
 **Weblate is libre software web-based continuous localization system,
 used by over 2500 libre projects and companies in more than 165 countries.**
 
-.. important::
-
-   This integration is deprecated and was merged directly into Weblate as an add-on since the 5.15 release.
 
 
 Fedora messaging integration and AMQP publisher for Weblate.
@@ -32,6 +29,13 @@ Fedora messaging integration and AMQP publisher for Weblate.
 .. image:: https://readthedocs.org/projects/weblate/badge/
     :alt: Documentation
     :target: https://docs.weblate.org/
+
+Deprecated
+----------
+
+.. warning::
+
+   This integration is deprecated and was merged directly into Weblate as an add-on since the 5.15 release.
 
 Installation
 ------------
