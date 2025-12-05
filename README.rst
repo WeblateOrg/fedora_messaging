@@ -1,3 +1,8 @@
+Deprecated
+----------
+
+**This integration is deprecated and was merged directly into Weblate as an add-on since the 5.15 release.**
+
 .. image:: https://s.weblate.org/cdn/Logo-Darktext-borders.png
    :alt: Weblate
    :target: https://weblate.org/
@@ -29,11 +34,6 @@ Fedora messaging integration and AMQP publisher for Weblate.
 .. image:: https://readthedocs.org/projects/weblate/badge/
     :alt: Documentation
     :target: https://docs.weblate.org/
-
-Deprecated
-----------
-
-**This integration is deprecated and was merged directly into Weblate as an add-on since the 5.15 release.**
 
 Installation
 ------------
